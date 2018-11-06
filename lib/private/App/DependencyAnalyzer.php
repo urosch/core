@@ -308,7 +308,7 @@ class DependencyAnalyzer {
 		} else {
 			$missing[] = (string)$this->l->t('missing minimal ownCloud version in appinfo.xml.');
 		}
-		if ($maxVersion !== null && !\in_array($this->platform->getOcChannel(), ['git', 'daily'], true)) {
+		if ($maxVersion !== null) {
 			if ($this->compareBigger($this->platform->getOcVersion(), $maxVersion)) {
 				$missing[] = (string)$this->l->t('ownCloud %s or lower is required.', $maxVersion);
 			}
